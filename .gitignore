@@ -1,0 +1,23 @@
+# Archivos generados por Code::Blocks
+*.exe
+*.o
+*.obj
+*.layout
+*.depend
+*.lspy
+*.cbp
+bin/
+obj/
+texto/
+
+# Archivos temporales
+*.bak
+*.tmp
+*.log
+
+# Archivos de configuracion del sistema
+.DS_Store  # Para macOS
+Thumbs.db  # Para Windows
+
+# Carpetas de dependencias o configuraciones locales
+.cache/
