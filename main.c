@@ -41,11 +41,13 @@ typedef struct lenv lenv;
 
 /* Lisp Value */
 
+/* A enum with all the type of values */
 enum { LVAL_ERR, LVAL_NUM,   LVAL_SYM, LVAL_STR,
        LVAL_FUN, LVAL_SEXPR, LVAL_QEXPR };
 
 typedef lval*(*lbuiltin)(lenv*, lval*);
 
+/* Main struct of the language */
 struct lval {
   int type;
 
@@ -66,7 +68,9 @@ struct lval {
   lval** cell;
 };
 
+/* struct used for a value in hash table */
 struct HashEntry;
+/* The struct used for set the values */
 struct HashTable;
 
 /* Lisp value constructors */
