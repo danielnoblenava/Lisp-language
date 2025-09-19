@@ -74,6 +74,8 @@ struct HashEntry;
 struct HashTable;
 
 /* Lisp value constructors */
+
+/* The lval used to represent numbers */
 lval* lval_num(long x) {
   lval* v = malloc(sizeof(lval));
   v->type = LVAL_NUM;
@@ -81,6 +83,7 @@ lval* lval_num(long x) {
   return v;
 }
 
+/* The lval used to represent errors */
 lval* lval_err(char* fmt, ...) {
   lval* v = malloc(sizeof(lval));
   v->type = LVAL_ERR;
@@ -93,6 +96,9 @@ lval* lval_err(char* fmt, ...) {
   return v;
 }
 
+/* 
+The lval used to represent symbols e.g (+, -, /) 
+*/
 lval* lval_sym(char* s) {
   lval* v = malloc(sizeof(lval));
   v->type = LVAL_SYM;
@@ -101,6 +107,7 @@ lval* lval_sym(char* s) {
   return v;
 }
 
+/* The lval used to represent strings */
 lval* lval_str(char* s) {
   lval* v = malloc(sizeof(lval));
   v->type = LVAL_STR;
@@ -109,6 +116,7 @@ lval* lval_str(char* s) {
   return v;
 }
 
+/* The lval used to represent lisp - defined functions */
 lval* lval_builtin(lbuiltin func) {
   lval* v = malloc(sizeof(lval));
   v->type = LVAL_FUN;
